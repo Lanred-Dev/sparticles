@@ -1,6 +1,6 @@
 /**!
  * Sparticles - Lightweight, High Performance Particles in Canvas
- * @version 1.4.0
+ * @version 1.4.5
  * @license MPL-2.0
  * @author simeydotme <simey.me@gmail.com>
  * @website http://sparticlesjs.dev
@@ -862,7 +862,12 @@ var Sparticles = function Sparticles(node, options, width, height) {
     // stop the rendering and updating
     this.stop(); // remove the canvas element from the DOM
 
-    this.el.removeChild(this.canvas); // remove the resize event for this instance
+    if (this.el === this.canvas) {
+      this.canvas.parentNode.removeChild(this.canvas);
+    } else {
+      this.el.removeChild(this.canvas);
+    } // remove the resize event for this instance
+
 
     window.removeEventListener("resize", this); // delete all the properties from the instance
     // to free up memory
@@ -1002,6 +1007,7 @@ Sparticles.prototype.getStyleArray = function () {
 Sparticles.prototype.setupMainCanvas = function () {
   if (this.el.nodeName === "CANVAS") {
     this.canvas = this.el;
+    this.resizable = false;
   } else {
     this.canvas = document.createElement("canvas");
     this.setCanvasSize();
@@ -1009,7 +1015,6 @@ Sparticles.prototype.setupMainCanvas = function () {
   }
 
   this.ctx = this.canvas.getContext("2d");
-  this.canvas.setAttribute("class", "sparticles");
   return this.canvas;
 };
 /**
