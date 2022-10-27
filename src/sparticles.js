@@ -151,7 +151,7 @@ const Sparticles = function(node, options, width, height) {
     this.stop();
     // remove the canvas element from the DOM
     if (this.el === this.canvas) {
-      this.canvas.parentNode.removeChild(this.canvas)
+      this.canvas.parentNode.removeChild(this.canvas);
     } else {
       this.el.removeChild(this.canvas);
     }
@@ -282,7 +282,7 @@ Sparticles.prototype.setupMainCanvas = function() {
   }
 
   this.ctx = this.canvas.getContext("2d");
-  this.canvas.setAttribute("class", "sparticles")
+  this.canvas.classList.add("sparticles");
 
   return this.canvas;
 };
