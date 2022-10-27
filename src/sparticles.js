@@ -150,7 +150,11 @@ const Sparticles = function(node, options, width, height) {
     // stop the rendering and updating
     this.stop();
     // remove the canvas element from the DOM
-    this.el.removeChild(this.canvas);
+    if (this.el === this.canvas) {
+      this.canvas.parentNode.removeChild(this.canvas)
+    } else {
+      this.el.removeChild(this.canvas);
+    }
     // remove the resize event for this instance
     window.removeEventListener("resize", this);
     // delete all the properties from the instance
@@ -270,6 +274,7 @@ Sparticles.prototype.getStyleArray = function() {
 Sparticles.prototype.setupMainCanvas = function() {
   if (this.el.nodeName === "CANVAS") {
     this.canvas = this.el;
+    this.resizable = false;
   } else {
     this.canvas = document.createElement("canvas");
     this.setCanvasSize();
