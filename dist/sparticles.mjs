@@ -1000,11 +1000,16 @@ Sparticles.prototype.getStyleArray = function () {
 
 
 Sparticles.prototype.setupMainCanvas = function () {
-  this.canvas = document.createElement("canvas");
-  this.canvas.setAttribute("class", "sparticles");
+  if (this.el.nodeName === "CANVAS") {
+    this.canvas = this.el;
+  } else {
+    this.canvas = document.createElement("canvas");
+    this.setCanvasSize();
+    this.el.appendChild(this.canvas);
+  }
+
   this.ctx = this.canvas.getContext("2d");
-  this.setCanvasSize();
-  this.el.appendChild(this.canvas);
+  this.canvas.setAttribute("class", "sparticles");
   return this.canvas;
 };
 /**
