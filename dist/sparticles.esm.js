@@ -1,6 +1,6 @@
 /**!
  * Sparticles - Lightweight, High Performance Particles in Canvas
- * @version 1.4.5
+ * @version 1.4.7
  * @license MPL-2.0
  * @author simeydotme <simey.me@gmail.com>
  * @website http://sparticlesjs.dev
@@ -1008,6 +1008,7 @@ Sparticles.prototype.setupMainCanvas = function () {
   if (this.el.nodeName === "CANVAS") {
     this.canvas = this.el;
     this.resizable = false;
+    this.setCanvasSize(this.canvas.clientWidth, this.canvas.clientHeight);
   } else {
     this.canvas = document.createElement("canvas");
     this.setCanvasSize();
