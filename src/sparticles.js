@@ -275,6 +275,7 @@ Sparticles.prototype.setupMainCanvas = function() {
   if (this.el.nodeName === "CANVAS") {
     this.canvas = this.el;
     this.resizable = false;
+    this.setCanvasSize(this.canvas.clientWidth, this.canvas.clientHeight);
   } else {
     this.canvas = document.createElement("canvas");
     this.setCanvasSize();
