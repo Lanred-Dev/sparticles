@@ -1,4 +1,5 @@
 # Sparticles
+## I forked this version so I could add an option for a custom canvas, instead of it creating a new one everytime.
 ### javascript particles in canvas
 
 #### https://sparticlesjs.dev
