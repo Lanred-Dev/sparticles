@@ -1,6 +1,6 @@
 {
   "name": "@lanred/sparticles",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "Lightweight, High Performance Particles in Canvas",
   "main": "dist/sparticles.mjs",
   "files": [
