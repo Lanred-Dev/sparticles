@@ -1,6 +1,6 @@
 /**!
  * Sparticles - Lightweight, High Performance Particles in Canvas
- * @version 1.3.1
+ * @version 1.4.0
  * @license MPL-2.0
  * @author simeydotme <simey.me@gmail.com>
  * @website http://sparticlesjs.dev
