@@ -282,8 +282,6 @@ Sparticles.prototype.setupMainCanvas = function() {
   }
 
   this.ctx = this.canvas.getContext("2d");
-  this.canvas.classList.add("sparticles");
-
   return this.canvas;
 };
 
